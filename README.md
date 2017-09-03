@@ -4,7 +4,7 @@ In addition to sorting the ui component it will also sort the options of the nat
 
 This plugin is a wrapper around select2 and jqueryUi sortable.
 
-##examples:
+## Examples:
 
 ```javascript
 $('#select').select2Sort();
@@ -15,6 +15,6 @@ $('#select').select2Sort({
 });
 ```
 
-##Prerequisites
+## Prerequisites
 Jquery, Jquery Ui, Select2 v4
 
