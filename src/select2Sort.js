@@ -1,13 +1,17 @@
 (function ($) {
-    $.fn.select2Sort = function (options) {
-        if(options === undefined) {
-            options = {};
+    $.fn.select2Sort = function (select2Options, sortableOptions) {
+        if(select2Options === undefined) {
+            select2Options = {};
+        }
+
+        if(sortableOptions === undefined) {
+            sortableOptions = {};
         }
 
         var $this = $(this);
         $this = $('#' + this[0].id);
         //init select2 with given options
-        $this.select2(options);
+        $this.select2(select2Options);
         //find the select2 container for this select element
         var $selectionList = $this.next('.select2-container').find('.select2-selection__rendered');
 
@@ -37,10 +41,11 @@
             $this.html(optionString);
         };
 
-        //init jquery ui sortable
-        $selectionList.sortable({
+        sortableOptions = $.extend(sortableOptions, {
             update: sort
         });
+        //init jquery ui sortable
+        $selectionList.sortable(sortableOptions);
 
         return this;
     };
