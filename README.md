@@ -13,6 +13,16 @@ $('#select').select2Sort({
     tags: true,
     multiple: true
 });
+
+var select2Options = {};
+var sortableOptions = {};
+
+//param1 is select2 options, param2 is jquery ui sortable options
+$('#select').select2Sort(select2Options, sortableOptions);
+
+//NOTE, jquery ui sortable option "update" gets overridden as it is used to 
+//handle the sorting functionality
+
 ```
 
 ## Prerequisites
